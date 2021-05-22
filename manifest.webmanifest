@@ -1,0 +1,165 @@
+{
+    "short_name": "PureSpa",
+    "name": "PureSpa - Corbas",
+    "description": "Site officiel du PureSpa - Corbas",
+    "icons": [{
+            "src": "/images/SpaLogo_192.webp",
+            "type": "image/webp",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/SpaLogo_192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/SpaLogo_512.webp",
+            "type": "image/webp",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/images/SpaLogo_512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/SpaLogo_1024.webp",
+            "type": "image/webp",
+            "sizes": "1024x1024"
+        },
+        {
+            "src": "/images/SpaLogo_1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/pages/achat/",
+    "background_color": "#FFFFFF",
+    "display": "minimal-ui",
+    "scope": "/",
+    "theme_color": "#343a40",
+    "shortcuts": [{
+            "name": "Faire un achat",
+            "short_name": "Achat",
+            "description": "Faire un achat sur le site PureSpa - Corbas",
+            "url": "/pages/achat/",
+            "icons": [{
+                    "src": "/images/SpaLogo_192.webp",
+                    "type": "image/webp",
+                    "sizes": "192x192"
+                },
+                {
+                    "src": "/images/SpaLogo_192.png",
+                    "type": "image/png",
+                    "sizes": "192x192",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_512.webp",
+                    "type": "image/webp",
+                    "sizes": "512x512"
+                },
+                {
+                    "src": "/images/SpaLogo_512.png",
+                    "type": "image/png",
+                    "sizes": "512x512",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.webp",
+                    "type": "image/webp",
+                    "sizes": "1024x1024"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.png",
+                    "type": "image/png",
+                    "sizes": "1024x1024",
+                    "purpose": "any maskable"
+                }
+            ]
+        },
+        {
+            "name": "Mon profil",
+            "short_name": "Profil",
+            "description": "Voir son profil sur le site PureSpa - Corbas",
+            "url": "/pages/profil/",
+            "icons": [{
+                    "src": "/images/SpaLogo_192.webp",
+                    "type": "image/webp",
+                    "sizes": "192x192"
+                },
+                {
+                    "src": "/images/SpaLogo_192.png",
+                    "type": "image/png",
+                    "sizes": "192x192",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_512.webp",
+                    "type": "image/webp",
+                    "sizes": "512x512"
+                },
+                {
+                    "src": "/images/SpaLogo_512.png",
+                    "type": "image/png",
+                    "sizes": "512x512",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.webp",
+                    "type": "image/webp",
+                    "sizes": "1024x1024"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.png",
+                    "type": "image/png",
+                    "sizes": "1024x1024",
+                    "purpose": "any maskable"
+                }
+            ]
+        },
+        {
+            "name": "Conditions Générales d'Utilisation",
+            "short_name": "CGU",
+            "description": "Voir les Conditions Générales d'Utilisation du site PureSpa - Corbas",
+            "url": "/pages/cgu/",
+            "icons": [{
+                    "src": "/images/SpaLogo_192.webp",
+                    "type": "image/webp",
+                    "sizes": "192x192"
+                },
+                {
+                    "src": "/images/SpaLogo_192.png",
+                    "type": "image/png",
+                    "sizes": "192x192",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_512.webp",
+                    "type": "image/webp",
+                    "sizes": "512x512"
+                },
+                {
+                    "src": "/images/SpaLogo_512.png",
+                    "type": "image/png",
+                    "sizes": "512x512",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.webp",
+                    "type": "image/webp",
+                    "sizes": "1024x1024"
+                },
+                {
+                    "src": "/images/SpaLogo_1024.png",
+                    "type": "image/png",
+                    "sizes": "1024x1024",
+                    "purpose": "any maskable"
+                }
+            ]
+        }
+    ]
+}

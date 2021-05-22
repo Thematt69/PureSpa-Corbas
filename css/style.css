@@ -1,0 +1,35 @@
+.alertGraph {
+  display: none;
+}
+
+/*tablettes*/
+
+@media only screen and (max-width: 1024px) {
+  #imageProfil {
+    width: 150px;
+    height: 150px;
+  }
+  #forecastDaily {
+    display: none !important;
+  }
+  #forecastNextHours {
+    display: none !important;
+  }
+  .alertGraph {
+    display: initial;
+  }
+}
+
+/* mobiles */
+
+@media only screen and (max-width: 768px) {
+  #imageProfil {
+    display: none;
+  }
+  .graph {
+    display: none;
+  }
+  #temp {
+    display: none;
+  }
+}
