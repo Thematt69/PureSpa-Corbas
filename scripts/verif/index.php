@@ -40,7 +40,9 @@ function envoi_mail($to)
     mail($to, $subject, $contenu, implode("\r\n", $headers));
 }
 
-$req = $bdd->query('SELECT id,mail,date_debut,date_expiration,abonnement FROM dev_spa_achats WHERE statut!="Expirée"');
+$isSendMail = false;
+
+$req = $bdd->query('SELECT id,mail,date_debut,date_expiration,abonnement,statut FROM dev_spa_achats WHERE statut!="Expirée"');
 
 while ($donnees = $req->fetch()) {
     $date = strtotime($donnees['date_debut']);
@@ -52,6 +54,7 @@ while ($donnees = $req->fetch()) {
         $statut = "Averti par mail";
         if ($donnees['statut'] != "Averti par mail") {
             envoi_mail($donnees['mail']);
+            $isSendMail = true;
         }
     } else if (time() > $date && time() < $expiration) { //aujourd'hui > date Et aujourd'hui < date d'expiration
         $statut = "En cours";
@@ -60,6 +63,33 @@ while ($donnees = $req->fetch()) {
     } else {
         $statut = "Inconnu";
     }
+
+    // SECTION - Enregistrement de la vérification
+
+    $sql2 = 'INSERT INTO spa_verifs(idAchat, mailAchat, isSendMail, dateDebutAchat, dateFinAchat, typeAchat, statutAchat)
+            VALUES(:idAchat, :mailAchat, :isSendMail, :dateDebutAchat, :dateFinAchat, :typeAchat, :statutAchat)';
+
+    $req2 = $bdd->prepare($sql2);
+
+    $req2->execute(array(
+        'idAchat' => $donnees['id'],
+        'mailAchat' => $donnees['mail'],
+        'isSendMail' => $isSendMail,
+        'dateDebutAchat' => $donnees['date_debut'],
+        'dateFinAchat' => $donnees['date_expiration'],
+        'typeAchat' => $donnees['abonnement'],
+        'statutAchat' => $statut,
+    ));
+
+    $req2->closeCursor();
+
+    echo ('Date de vérification : ' . date('d/m/Y H:i:s', time()) . '<br>');
+    echo ("ID de l'achat : " . $donnees['id'] . '<br>');
+    echo ("Mail de l'acheteur : " . $donnees['mail'] . '<br>');
+    if ($isSendMail) echo ('mail envoyé !<br>');
+    echo ("Période de l'achat : " . $donnees['date_debut'] . ' au ' . $donnees['date_expiration'] . '<br>');
+    echo ("Type d'achat : " . $donnees['abonnement'] . '<br>');
+    echo ("Statut de l'achat : " . $statut . '<hr>');
 
     $req1 = $bdd->prepare('UPDATE dev_spa_achats SET statut = :statut WHERE id = :id');
 

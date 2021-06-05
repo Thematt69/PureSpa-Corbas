@@ -2,9 +2,7 @@
 
 session_start();
 
-include('../../../access/bdd.php');
-
-include('../verif/index.php');
+include('../import/index.php');
 
 if (isset($_POST['date'])) {
     $date = htmlspecialchars($_POST['date']) . " " . htmlspecialchars($_POST['heure']) . ":00";

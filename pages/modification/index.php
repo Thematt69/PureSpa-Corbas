@@ -2,9 +2,7 @@
 
 session_start();
 
-include('../../../access/bdd.php');
-
-include('../../scripts/verif/index.php');
+include('../../scripts/import/index.php');
 
 if ($_SESSION['mail'] == "devilliers.matthieu@gmail.com" || $_SESSION['mail'] == 'test@matthieudevilliers.fr') {
     //ne rien faire

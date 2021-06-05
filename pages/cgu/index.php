@@ -2,9 +2,7 @@
 
 session_start();
 
-include('../../../access/bdd.php');
-
-include('../../scripts/verif/index.php');
+include('../../scripts/import/index.php');
 
 $reponse = $bdd->query('SELECT * FROM dev_spa_prix');
 
