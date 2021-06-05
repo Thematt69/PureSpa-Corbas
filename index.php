@@ -2,37 +2,15 @@
 
 session_start();
 
-include('scripts/verif/index.php');
+include('scripts/import/index.php');
 
 if (isset($_SESSION['mail'])) {
     header('Location: https://spa.matthieudevilliers.fr/pages/profil/');
 }
 
 if ($_GET['mail']) {
-    $sqlGoogle = 'SELECT *
-                FROM dev_spa_compte
-                WHERE mail = ?';
 
-    $req = $bdd->prepare($sqlGoogle);
-    $req->execute(array($_GET['mail']));
-
-    $donneeGoogle = $req->fetch();
-
-    if (isset($donneeGoogle['mail'])) {
-        $_SESSION['nom'] = $donneeGoogle['nom'];
-        $_SESSION['prenom'] = $donneeGoogle['prenom'];
-        $_SESSION['mail'] = $donneeGoogle['mail'];
-        $_SESSION['mdp'] = $donneeGoogle['mdp'];
-        $_SESSION['insee'] = $donneeGoogle['insee'];
-        $_SESSION['token'] = $donneeGoogle['token'];
-        echo ('coucou');
-
-        header('Location: https://spa.matthieudevilliers.fr/pages/profil/');
-    } else {
-        echo ('rien trouvé');
-    }
-
-    $req->closeCursor();
+    header('Location: https://spa.matthieudevilliers.fr/anniv.php');
 }
 
 ?>
@@ -134,6 +112,30 @@ if ($_GET['mail']) {
             </div>
         </div>
     </div>
+    <!-- <div class="row">
+        <div class="col">
+            <br>
+            <div class="card">
+                <div class="card-body">
+
+                    <h2 class="text-center">Actualité</h2>
+
+                    <br>
+
+                    <video controls poster="https://spa.matthieudevilliers.fr/images/vignette.jpg" preload="auto" class="img-fluid">
+                        <source src="https://spa.matthieudevilliers.fr/images/bandeau_angers.mp4" type="video/mp4">
+                        <source src="https://spa.matthieudevilliers.fr/images/bandeau_angers.webm" type="video/webm">
+                        <p>
+                            Votre navigateur ne prend pas en charge les vidéos HTML5.
+                            Voici <a href="https://spa.matthieudevilliers.fr/images/bandeau_angers.mp4">un lien pour télécharger la vidéo</a>.
+                        </p>
+                    </video>
+
+                </div>
+            </div>
+
+        </div>
+    </div> -->
 
     <!-- <div class="container">
         <div class="row justify-content-center">
