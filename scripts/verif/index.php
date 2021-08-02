@@ -66,7 +66,7 @@ while ($donnees = $req->fetch()) {
 
     // SECTION - Enregistrement de la vérification
 
-    $sql2 = 'INSERT INTO spa_verifs(idAchat, mailAchat, isSendMail, dateDebutAchat, dateFinAchat, typeAchat, statutAchat)
+    $sql2 = 'INSERT INTO dev_spa_verifs(idAchat, mailAchat, isSendMail, dateDebutAchat, dateFinAchat, typeAchat, statutAchat)
             VALUES(:idAchat, :mailAchat, :isSendMail, :dateDebutAchat, :dateFinAchat, :typeAchat, :statutAchat)';
 
     $req2 = $bdd->prepare($sql2);
